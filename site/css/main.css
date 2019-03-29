@@ -27,12 +27,14 @@ header{
 .content{
     grid-area: content;
     background-color: #1AF3FF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;   
+}
+.container{
     display: flex;
     flex-wrap: wrap;
-    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
 }
@@ -56,12 +58,15 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    -webkit-box-shadow: 2px 7px 26px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 7px 26px -4px rgba(0,0,0,0.75);
+    box-shadow: 2px 7px 26px -4px rgba(0,0,0,0.75);
 }
 
 
 footer{
     grid-area: footer;
-    background-color: #0E74FF;
+    background-color: red;
 }
 
 .sidemenu{
@@ -72,17 +77,22 @@ footer{
     height: 230px;
     width: 230px;
     background-color: aliceblue;
+    -webkit-box-shadow: 10px 10px 55px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 55px -8px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 55px -8px rgba(0,0,0,0.75);
 }
-.pspicture{
+
+/* .pspicture{
     height: 85%;
     width: 100%;
-    background-color: darkgray;
 }
 .downtag{
     height: 15%;
     width: 100%;
-    border-color: gold;
 }
+.downtag:hover{
+    background-color: #0CA3E8;
+} */
 
 .about{
     background-color: #1A75E8;
@@ -91,6 +101,8 @@ footer{
     width: 90%;
     height: 60%;
     border-radius: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
 }
 
 .medialinks{
@@ -103,18 +115,29 @@ footer{
 .wholemini{
     width: 130px;
     height: 130px;
-    margin: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-left: 90px;
+    margin-right: 90px;
+    margin-top: 50px;
     background-color: azure;
-}
-.minipsdpic{
-    height: 80%;
-    width: 100%;
-    background-color: indigo;
+    -webkit-box-shadow: 0px -1px 37px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px -1px 37px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px -1px 37px 0px rgba(0,0,0,0.75);
+    grid-template-rows: 80% 20%;
+    
 }
 
+
 .minipsdpicname{
-    height: 20%;
+    height: 0%;
     width: 100%;
+    font-size: 0;
+    transition: all 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .pc{
@@ -134,20 +157,32 @@ footer{
 /* computer stuff down here */
 
 .carticon{
-    height: 100%;
-    width: 200px;
+    height: 100px;
+    width: 100px;
     background-color: #1CFFC7;
     grid-area: sidemenu;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-shadow: 2px 7px 26px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 7px 26px -4px rgba(0,0,0,0.75);
+    box-shadow: 2px 7px 26px -4px rgba(0,0,0,0.75);
+}
+.carticon i {
+    font-size: 3.4rem;
 }
 
 @media only screen and (min-width: 992px){
     .wrapper{
-        grid-template-rows: 100px auto 100px;
-        grid-template-columns: 340px auto;
+        min-height: 140vh;
+        grid-template-rows: 200px auto;
+        grid-template-columns: 400px auto;
         grid-template-areas: 
         'header header' 
         'sidemenu content' 
-        'footer footer'
+    }
+    footer{
+        display: none;
     }
     .carticon{
         display: none;
@@ -155,26 +190,88 @@ footer{
     .wholebox{
         margin-left: 45px;
         margin-right: 45px;
-        margin-top: 30px;
-        height: 430px;
-        width: 430px;
+        margin-top: 10px;
+        height: 410px;
+        width: 410px;
+        transition: all 1s;
     }
-
+    
     .tab{
-        width: 30%;
-        height: 80%;
-        margin-left: 280px;
-        margin-right: 280px;
+        display: none;
     }
     .logo{
         width: 20%;
     }
-
+    .sidemenu{
+        display: block;
+        grid-area: sidemenu;
+        height: 100%;
+        background-color: hotpink;
+        padding-left: 20px;
+        font-size: 3rem;
+        font-family:Arial, Helvetica, sans-serif;
+        
+    }
     .pc{
         display: block;
         background-color: aliceblue;
-        margin: 20px;
+        margin-left: 80px;
+        margin-right: 80px;
         height: 300px;
         width: 300px;
+    }
+    .pc:hover{
+        height: 320px;
+        width: 320px;
+        -webkit-box-shadow: 0px 2px 34px 0px rgba(0,136,255,1);
+        -moz-box-shadow: 0px 2px 34px 0px rgba(0,136,255,1);
+        box-shadow: 0px 2px 34px 0px rgba(0,136,255,1);
+    }
+    .wholebox:hover{
+        background-color: #4dc3ff;
+        height: 500px;
+        width: 500px;
+        -webkit-box-shadow: 0px 2px 34px 5px rgba(0,136,255,1);
+        -moz-box-shadow: 0px 2px 34px 5px rgba(0,136,255,1);
+        box-shadow: 0px 2px 34px 5px rgba(0,136,255,1);
+    }
+    .logo{
+        height: 100%;
+        width: 100%;
+        font-size: 10rem;
+        font-family: Arial, Helvetica, sans-serif;
+        color: whitesmoke;
+        text-shadow:
+        0.05em 0 black,
+        0 0.05em black,
+        -0.05em 0 black,
+        0 -0.05em black,
+        -0.05em -0.05em black,
+        -0.05em 0.05em black,
+        0.05em -0.05em black,
+        0.05em 0.05em black;
+        text-align: center;
+        -webkit-box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.75);
+        box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.75);
+    }
+    .wholemini{
+        transition: all 1s;
+    }
+    .wholemini:hover{
+        height: 500px;
+        width: 500px;
+        margin: 10px;
+        -webkit-box-shadow: 0px 2px 34px 5px rgba(0,136,255,1);
+        -moz-box-shadow: 0px 2px 34px 5px rgba(0,136,255,1);
+        box-shadow: 0px 2px 34px 5px rgba(0,136,255,1);
+    }
+    .wholemini:hover .minipsdpicname{
+        height: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 255, 0.3);
+        font-size: 2rem;
     }
 }
